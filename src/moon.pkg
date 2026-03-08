@@ -1,0 +1,6 @@
+import {
+  "mizchi/differencial_ecs/linalg" @linalg,
+  "mizchi/differencial_ecs/optimizer" @optimizer,
+}
+
+warnings = "-1-2-7-20-29-71"

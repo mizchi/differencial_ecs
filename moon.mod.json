@@ -1,0 +1,25 @@
+{
+  "name": "mizchi/differencial_ecs",
+  "version": "0.1.0",
+  "deps": {},
+  "readme": "README.mbt.md",
+  "repository": "https://github.com/mizchi/differencial_ecs",
+  "license": "MIT",
+  "keywords": [
+    "optimization",
+    "cma-es",
+    "balance-tuning",
+    "game-design",
+    "moonbit"
+  ],
+  "description": "Game-agnostic parameter optimizer using CMA-ES for balance tuning",
+  "source": "src",
+  "warn-list": "-6-29-53-68",
+  "exclude": [
+    "examples",
+    ".claude",
+    "_build",
+    "justfile",
+    "node_modules"
+  ]
+}

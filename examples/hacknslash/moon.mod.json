@@ -1,0 +1,8 @@
+{
+  "name": "mizchi/dec_example_hacknslash",
+  "version": "0.1.0",
+  "deps": {
+    "mizchi/differencial_ecs": { "path": "../.." }
+  },
+  "source": "src"
+}

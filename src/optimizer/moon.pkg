@@ -1,0 +1,6 @@
+import {
+  "moonbitlang/core/math" @math,
+  "mizchi/differencial_ecs/linalg" @linalg,
+}
+
+warnings = "-1-2-7-20-29-71"
