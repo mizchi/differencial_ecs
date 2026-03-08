@@ -1,0 +1,6 @@
+import {
+  "mizchi/differencial_ecs" @dec,
+}
+
+options("is-main": true, targets: { "main.mbt": ["js"] })
+warnings = "-1-2-7-20-29-71"
