@@ -95,7 +95,7 @@ pub fn CmaEs::new(
 
 pub fn CmaEs::sample_population(self : CmaEs) -> Array[Array[Double]] {
   let n = self.n
-  let (eigvals, eigvecs) = @linalg.eigen_symmetric(self.cov, n)
+  let (eigvals, eigvecs) = eigen_decompose(self.cov, n)
   let pop : Array[Array[Double]] = []
   for _k = 0; _k < self.pop_size; _k = _k + 1 {
     let z : Array[Double] = Array::make(n, 0.0)

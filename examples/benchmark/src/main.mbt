@@ -267,8 +267,6 @@ fn main {
   println("  Schwefel:   FAIR-FAIL (deceptive, optimum far from init)")
   println("  Griewank:   GOOD-PASS (easier in higher dimensions)")
 
-  // Performance scaling
-  run_perf_benchmarks()
 }
 
 fn pad(s : String, width : Int) -> String {

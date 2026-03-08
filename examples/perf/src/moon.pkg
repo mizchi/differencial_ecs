@@ -6,6 +6,11 @@ import {
 options(
   "is-main": true,
   "native-stub": ["clock_stub.c"],
+  link: {
+    "native": {
+      "cc-link-flags": "-framework Accelerate",
+    },
+  },
   targets: {
     "clock_js.mbt": ["js"],
     "clock_native.mbt": ["native"],

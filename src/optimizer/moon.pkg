@@ -3,4 +3,12 @@ import {
   "mizchi/differencial_ecs/linalg" @linalg,
 }
 
+options(
+  "native-stub": ["lapack_stub.c"],
+  targets: {
+    "eigen_bridge_js.mbt": ["js", "wasm", "wasm-gc"],
+    "eigen_bridge_native.mbt": ["native"],
+    "lapack_stub.c": ["native"],
+  },
+)
 warnings = "-1-2-7-20-29-71"
