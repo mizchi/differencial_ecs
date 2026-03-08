@@ -108,7 +108,7 @@ Validated against standard test functions from [Hansen (2016) "The CMA Evolution
 | Rosenbrock | 5 | **PASS** | <1e-10 | CMA-ES learns valley curvature |
 | Rosenbrock | 10 | **PASS** | <1e-10 | Needs ~1000 gens to learn 10D valley |
 | Rastrigin | 5 | FAIL | 99.0 | Multimodal — needs restarts |
-| Ackley | 10 | **GOOD** | 6.7e-6 | Narrow basin detection |
+| Ackley | 10 | **PASS** | 4.4e-8 | Narrow basin detection (500 gens) |
 | Schwefel | 5 | FAIL | 1.2M | Deceptive landscape |
 | Griewank | 10 | **GOOD** | 0.0004 | Non-separable interactions |
 

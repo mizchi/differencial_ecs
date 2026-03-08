@@ -216,7 +216,8 @@ fn main {
   )
 
   // --- Rastrigin (n=5) ---
-  // Hard: ~10^5 local minima. CMA-ES may get trapped.
+  // Hard: ~10^5 local minima. CMA-ES gets trapped even at 3000 gens.
+  // Needs IPOP-CMA-ES (restart strategy) to escape local optima.
   let n_ra = 5
   println("--- Rastrigin (n=" + n_ra.to_string() + ") ---")
   println("  f(x) = 10n + sum(x_i^2 - 10*cos(2*pi*x_i)), optimum at origin")
@@ -226,17 +227,18 @@ fn main {
   )
 
   // --- Ackley (n=10) ---
-  // Medium-hard: flat outer region, narrow deep basin.
+  // 500 gens achieves PASS
   let n_a = 10
   println("--- Ackley (n=" + n_a.to_string() + ") ---")
   println("  Nearly flat outer region, narrow optimal basin at origin")
   let opt_ackley = Array::make(n_a, 0.0)
   run_benchmark(
-    "Ackley", ackley, make_specs(n_a, 5.0, -32.768, 32.768), 200, opt_ackley,
+    "Ackley", ackley, make_specs(n_a, 5.0, -32.768, 32.768), 500, opt_ackley,
   )
 
   // --- Schwefel (n=5) ---
-  // Hard: deceptive, optimum at ~420.97 far from center.
+  // Hard: deceptive. Stuck at local optimum ~203.8 even at 3000 gens.
+  // Global optimum at ~420.97 is too far from initial guess.
   let n_s = 5
   println("--- Schwefel (n=" + n_s.to_string() + ") ---")
   println("  f(x) = 418.98n - sum(x_i*sin(sqrt(|x_i|))), optimum at ~420.97")
@@ -246,7 +248,7 @@ fn main {
   )
 
   // --- Griewank (n=10) ---
-  // Medium: non-separable, many local minima but becomes easier in high dim.
+  // GOOD but x2 stuck at local optimum ~-4.44. Does not improve with more gens.
   let n_g = 10
   println("--- Griewank (n=" + n_g.to_string() + ") ---")
   println("  f(x) = 1 + sum(x_i^2)/4000 - prod(cos(x_i/sqrt(i+1)))")
