@@ -122,6 +122,22 @@ All results match expected CMA-ES behavior from the literature.
 - `examples/deckbuilder/` — Card game archetype balance (3 archetypes, ~50% win rates)
 - `examples/sim_game/` — Economy simulation (tax, production, growth)
 
+## Performance
+
+Per-generation wall-clock time (Sphere objective, 1 seed, Apple Silicon):
+
+| n | JS/V8 (ms/gen) | Native release (ms/gen) |
+|---|---|---|
+| 5 | 0.12 | 0.03 |
+| 10 | 0.19 | 0.15 |
+| 20 | 0.60 | 1.35 |
+| 50 | 13.90 | 32.85 |
+| 100 | 193 | 402 |
+
+The bottleneck is Jacobi eigendecomposition (O(n^4) worst case per generation). For n > 30, V8's JIT outperforms native due to hot-loop optimization.
+
+**For game balance tuning (n=5..30), performance is not a concern** — runs complete in under a second. For n > 50, consider Cholesky-based CMA-ES or GPU acceleration (Metal/WGSL compute shaders).
+
 ## References
 
 - Hansen, N. (2016). [The CMA Evolution Strategy: A Tutorial](https://arxiv.org/abs/1604.00772). arXiv:1604.00772.

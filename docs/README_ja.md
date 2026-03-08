@@ -195,6 +195,22 @@ examples/benchmark/    — 標準最適化ベンチマーク（Sphere, Rosenbroc
 | `rng_seed` | 42 | CMA-ES 内部の乱数シード |
 | `log_interval` | 10 | 進捗表示間隔（0で無効） |
 
+## パフォーマンス
+
+1世代あたりの実行時間（Sphere 関数、1 seed、Apple Silicon）:
+
+| n | JS/V8 (ms/gen) | Native release (ms/gen) |
+|---|---|---|
+| 5 | 0.12 | 0.03 |
+| 10 | 0.19 | 0.15 |
+| 20 | 0.60 | 1.35 |
+| 50 | 13.90 | 32.85 |
+| 100 | 193 | 402 |
+
+ボトルネックは Jacobi 固有値分解（1世代あたり O(n⁴) worst case）。n > 30 では V8 の JIT がホットループを最適化し、native release より 2-3 倍速い。
+
+**ゲームバランス調整（n=5〜30）ではパフォーマンスは問題にならない** — 1秒以内に完了する。n > 50 では Cholesky 分解ベースの CMA-ES や GPU アクセラレーション（Metal/WGSL compute shader）を検討する価値がある。
+
 ## 参考文献
 
 - Hansen, N. (2016). [The CMA Evolution Strategy: A Tutorial](https://arxiv.org/abs/1604.00772). arXiv:1604.00772.

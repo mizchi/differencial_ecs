@@ -1,0 +1,14 @@
+import {
+  "mizchi/differencial_ecs" @dec,
+  "moonbitlang/core/math" @math,
+}
+
+options(
+  "is-main": true,
+  "native-stub": ["clock_stub.c"],
+  targets: {
+    "clock_js.mbt": ["js"],
+    "clock_native.mbt": ["native"],
+  },
+)
+warnings = "-1-2-7-20-29-71"
