@@ -207,12 +207,12 @@ fn main {
   )
 
   // --- Rosenbrock (n=10) ---
-  // Harder: more dimensions, weakly multimodal
+  // Needs ~1000 gens to learn the curved valley in 10D
   let n_r2 = 10
   println("--- Rosenbrock (n=" + n_r2.to_string() + ") ---")
   let opt_rosen2 = Array::make(n_r2, 1.0)
   run_benchmark(
-    "Rosenbrock", rosenbrock, make_specs(n_r2, 0.0, -5.0, 10.0), 500, opt_rosen2,
+    "Rosenbrock", rosenbrock, make_specs(n_r2, 0.0, -5.0, 10.0), 1000, opt_rosen2,
   )
 
   // --- Rastrigin (n=5) ---
