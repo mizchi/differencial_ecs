@@ -1,6 +1,6 @@
 {
   "name": "mizchi/differencial_ecs",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "deps": {},
   "readme": "README.mbt.md",
   "repository": "https://github.com/mizchi/differencial_ecs",
@@ -12,7 +12,7 @@
     "game-design",
     "moonbit"
   ],
-  "description": "Game-agnostic parameter optimizer using CMA-ES for balance tuning (experimental)",
+  "description": "[DEPRECATED] Renamed to mizchi/differentiable_ecs. Use mizchi/differentiable_ecs instead.",
   "source": "src",
   "warn-list": "-6-29-53-68",
   "exclude": [
