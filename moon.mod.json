@@ -12,7 +12,7 @@
     "game-design",
     "moonbit"
   ],
-  "description": "Game-agnostic parameter optimizer using CMA-ES for balance tuning",
+  "description": "Game-agnostic parameter optimizer using CMA-ES for balance tuning (experimental)",
   "source": "src",
   "warn-list": "-6-29-53-68",
   "exclude": [
